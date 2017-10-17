@@ -15,4 +15,10 @@ uint32_t tempo_medio(uint32_t acesso_l1, float t_miss_l1, uint32_t acesso_l2, fl
     tempo_medio = ceil(acesso_l1 +  acesso_mem * (t_miss_l1 / 100));
     return tempo_medio;
   }
+
+  // acessos ate nivel l2
+  else if (acesso_l3 ==0){
+    tempo_medio = ceil(acesso_l1 + (t_miss_l1 / 100) * (acesso_l2 + (t_miss_l2 / 100) * acesso_mem));
+    return tempo_medio;
+  }
 }
