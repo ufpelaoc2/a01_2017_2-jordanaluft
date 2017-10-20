@@ -8,10 +8,6 @@ uint32_t tempo_medio(uint32_t acesso_l1, float t_miss_l1, uint32_t acesso_l2, fl
   if (t_miss_l1 < 0 || t_miss_l2 < 0 || t_miss_l3 < 0 || t_miss_l1 > 100 || t_miss_l2 > 100|| t_miss_l3 > 100)
     return 0;
 
-  // tratamento de valores invalidos - quando acessos forem negativos
-  else if (acesso_l1 < 0 || acesso_l2 < 0 || acesso_l3 < 0 || acesso_mem < 0)
-    return 0;
-
   // nao ha acesso ao nivel l1 - acessos apenas ate memoria principal
   else if (acesso_l1 == 0){
     tempo_medio = acesso_mem;
